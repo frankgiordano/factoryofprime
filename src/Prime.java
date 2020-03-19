@@ -3,7 +3,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 /*
-* This prpogram will help determine each prime number upto a given number and
+* This program will help determine each prime number upto a given number and
 * determine a number's prime factors.
 * 
 * Inspired by the following link:
