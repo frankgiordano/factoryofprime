@@ -26,3 +26,10 @@ Find prime.jar generated within build directory
 Run the program:
  
 4 - java -jar Prime.jar
+
+## Test build
+
+At project's junit directory, perform the following command:
+
+1 - ant test
+
