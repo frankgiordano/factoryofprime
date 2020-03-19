@@ -25,4 +25,4 @@ Find prime.jar generated within build directory
  
 Run the program:
  
-4 - java -jar prime.jar
+4 - java -jar Prime.jar
