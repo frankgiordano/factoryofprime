@@ -1,38 +1,38 @@
 <?xml version="1.0" ?>
 <project name="JarBuild" basedir="." default="jarfile">
 
-	<target name="init" description="Initializes properties">
-		<property name="project.name" value="Prime" />
-		<property name="src.dir" value="src" />
-		<property name="build.dir" value="build" />
-		<property name="classes.dir" value="${build.dir}/classes" />
-		<property name="etc.dir" value="etc" />
+    <target name="init" description="Initializes properties">
+        <property name="project.name" value="Prime" />
+        <property name="src.dir" value="src" />
+        <property name="build.dir" value="build" />
+        <property name="classes.dir" value="${build.dir}/classes" />
+        <property name="etc.dir" value="etc" />
         <path id="junit.class.path">
             <pathelement location="./junit/lib/junit.jar" />
         </path>
-	</target>
+    </target>
 
-	<target name="prepare" description="Creates the build and classes directories" depends="init">
-		<mkdir dir="${classes.dir}" />
-	</target>
+    <target name="prepare" description="Creates the build and classes directories" depends="init">
+        <mkdir dir="${classes.dir}" />
+    </target>
 
-	<target name="compile" description="Compiles the code" depends="prepare">
-		<javac srcdir="${src.dir}"
-			destdir="${classes.dir}" >
-			<classpath refid="junit.class.path" />
-		</javac>
-	</target>
+    <target name="compile" description="Compiles the code" depends="prepare">
+        <javac srcdir="${src.dir}"
+            destdir="${classes.dir}" >
+            <classpath refid="junit.class.path" />
+        </javac>
+    </target>
 
-	<target name="jarfile" description="JARs the code" depends="compile">
-		<jar destfile="${build.dir}/${project.name}.jar" 
-			 manifest="${etc.dir}/MANIFEST.MF" >
-			<fileset dir="${classes.dir}" />
-			<fileset dir="${src.dir}" includes="**/*.java"/>
-		</jar>
-	</target>
+    <target name="jarfile" description="JARs the code" depends="compile">
+        <jar destfile="${build.dir}/${project.name}.jar" 
+             manifest="${etc.dir}/MANIFEST.MF" >
+            <fileset dir="${classes.dir}" />
+            <fileset dir="${src.dir}" includes="**/*.java"/>
+        </jar>
+    </target>
 
-	<target name="clean" description="Delete the build directory" depends="init">
-		<delete dir="${build.dir}" />
-	</target>
+    <target name="clean" description="Delete the build directory" depends="init">
+        <delete dir="${build.dir}" />
+    </target>
 
 </project>
